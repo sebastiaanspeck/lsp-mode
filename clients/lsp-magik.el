@@ -48,7 +48,7 @@
 
 (lsp-dependency
  'magik-ls
- '(:download :url lsp-magik-download-url-lsp
+ `(:download :url lsp-magik-download-url-lsp
              :store-path ,(f-join lsp-server-install-dir "magik-ls" (format "magik-language-server-%s.jar" lsp-magik-version))))
 
 (defcustom lsp-magik-ls-path
