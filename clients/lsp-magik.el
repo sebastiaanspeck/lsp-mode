@@ -71,6 +71,24 @@
   :package-version '(lsp-mode . "10.0.0")
   :lsp-path "magik.productDirs")
 
+(lsp-defcustom lsp-magik-smallworld-gis nil
+  "Smallworld gis (installation) directory.
+Used to expand $SMALLWORLD_GIS in dumped definition source paths."
+  :type 'string
+  :group 'lsp-magik
+  :package-version '(lsp-mode . "11.0.0")
+  :lsp-path "magik.smallworldGis")
+
+(lsp-defcustom lsp-magik-source-path-mappings nil
+  "Source-path prefix mappings.
+Rewrites a recorded source-path prefix (a logical or an absolute path) to a
+local path/logical so definitions resolve on this host."
+  :type '(alist :key-type (string :tag "from")
+                :value-type (string :tag "to"))
+  :group 'lsp-magik
+  :package-version '(lsp-mode . "11.0.0")
+  :lsp-path "magik.sourcePathMappings")
+
 (lsp-defcustom lsp-magik-lint-override-config-file nil
   "Override path to magiklintrc.properties."
   :type 'string
@@ -148,6 +166,20 @@ The next update resets the delay."
   :group 'lsp-magik
   :package-version '(lsp-mode . "10.0.0")
   :lsp-path "magik.typing.indexConditionUsages")
+
+(lsp-defcustom lsp-magik-typing-index-unary-operator-usages t
+  "Enable indexing of usages of unary operators by methods."
+  :type 'boolean
+  :group 'lsp-magik
+  :package-version '(lsp-mode . "11.0.0")
+  :lsp-path "magik.typing.indexUnaryOperatorUsages")
+
+(lsp-defcustom lsp-magik-typing-index-binary-operator-usages t
+  "Enable indexing of usages of binary operators by methods."
+  :type 'boolean
+  :group 'lsp-magik
+  :package-version '(lsp-mode . "11.0.0")
+  :lsp-path "magik.typing.indexBinaryOperatorUsages")
 
 (lsp-defcustom lsp-magik-typing-cache-indexed-definitions nil
   "Store and load the indexed definitions in the workspace folders."
