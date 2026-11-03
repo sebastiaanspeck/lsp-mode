@@ -181,7 +181,7 @@ The next update resets the delay."
   :package-version '(lsp-mode . "11.0.0")
   :lsp-path "magik.typing.indexBinaryOperatorUsages")
 
-(lsp-defcustom lsp-magik-typing-cache-indexed-definitions nil
+(lsp-defcustom lsp-magik-typing-cache-indexed-definitions t
   "Store and load the indexed definitions in the workspace folders."
   :type 'boolean
   :group 'lsp-magik
@@ -238,7 +238,7 @@ The next update resets the delay."
                                         (or (lsp-resolve-value (executable-find (expand-file-name "bin/java" (getenv "JAVA_HOME"))))
                                             (lsp-resolve-value (executable-find "java"))))
                                        (t "java")))
-  "Path to Java Runtime, Java 11 minimum."
+  "Path to Java Runtime, Java 17 minimum."
   :type 'string
   :group 'lsp-magik
   :package-version '(lsp-mode . "10.0.0"))
